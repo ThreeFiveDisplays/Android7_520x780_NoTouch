@@ -16,7 +16,3 @@ RUN git clone https://github.com/friendlyarm/prebuilts.git -b master --depth 1 &
 
 ENV PATH="/opt/FriendlyARM/toolchain/6.4-aarch64/bin:${PATH}"
 
-
-WORKDIR home/tugy/develop/
-
-ENTRYPOINT /bin/bash
