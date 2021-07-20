@@ -16,3 +16,11 @@ RUN git clone https://github.com/friendlyarm/prebuilts.git -b master --depth 1 &
 
 ENV PATH="/opt/FriendlyARM/toolchain/6.4-aarch64/bin:${PATH}"
 
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin/repo && \
+    chmod +x /usr/local/bin/repo
+
+RUN curl -L https://github.com/aktau/github-release/releases/download/v0.6.2/linux-amd64-github-release.tar.bz2 | tar -C /tmp -jx && \
+    mv /tmp/bin/linux/amd64/github-release /usr/local/bin/
+
+RUN which repo && \
+    which github-release
